@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>My first Three.js app</title>
+        <style>
+            body { margin: 0; }
+            canvas { width: 100%; height: 100% }
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js"></script>
+        <script>
+
+          // 建立舞臺
+          const scene = new THREE.Scene()
+          // 建立相機
+          const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+          // 建立渲染器
+          const renderer = new THREE.WebGLRenderer()
+
+          camera.position.z = 500
+          camera.position.x = 150
+          camera.position.y = 100
+
+          // 將渲染器加入畫面
+          renderer.setSize( window.innerWidth, window.innerHeight )
+          document.body.appendChild( renderer.domElement )
+
+          // mesh 為我們後面要加入的 3D 模型
+          // 直接調用 scene 下的 add 方法，就可將 模型加入舞臺
+          const geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
+          const material = new THREE.MeshNormalMaterial();
+          const mesh = new THREE.Mesh( geometry, material );
+          scene.add( mesh )
+
+          // 將舞臺與相機加入渲染器
+          renderer.render( scene, camera )
+
+
+        </script>
+    </body>
+</html>
