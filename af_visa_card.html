@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:site" content="@guri_vr">
+    <meta name="twitter:title" content="AR mode example">
+    <meta name="twitter:image" content="https://s3.amazonaws.com/gurivr/logo_twitter.png">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:player" content="https://s3.amazonaws.com/gurivr/s/undefined.html">
+    <meta name="twitter:player:width" content="400">
+    <meta name="twitter:player:height" content="370">
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://rawcdn.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-google-poly-component@1.0.0/dist/aframe-google-poly-component.min.js"></script>
+    <script src="js/play-all-model-animations.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <a-scene loading-screen="enabled: false">
+      <a-entity camera="userHeight: 1.6" look-controls wasd-controls>
+
+      </a-entity>
+      <a-assets>
+        <a-asset-item id="visaCard" src="resource/visa_card.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#visaCard" play-all-model-animations modify-materials></a-entity>
+      </a-scene>
+
+      <!-- <a-scene loading-screen="enabled: false">
+        <a-assets>
+          <a-asset-item id="visaCard" src="resource/visa_card.gltf"></a-asset-item>
+        </a-assets>
+        <a-entity gltf-model="#visaCard" play-all-model-animations modify-materials></a-entity>
+      </a-scene> -->
+  </body>
+</html>
+</html>
