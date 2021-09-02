@@ -13,11 +13,19 @@
 </head>
 <body>
     <a-scene>
-        <a-entity camera="userHeight: 1" look-controls wasd-controls></a-entity>
         <a-assets>
             <img id="visa" src="resource/cube_visa.png">
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
         </a-assets>
-        <a-box src="#visa" position="1 -2 -3" rotation="0 0 0" height="2.5" width="4" depth="0.1" color="#efefef" scale="0.5 0.5 0.5" shadow></a-box>
+        <a-box src="#visa"
+            position="0 2 -3"
+            rotation="-15 0 0"
+            height="2.5" width="4" depth="0.02"
+            color="#efefef"
+            scale="0.5 0.5 0.5"
+            animation="property: rotation; from:360 0 0; to: -15 360 0; loop: false; dur: 2000; startEvents: click;">
+        </a-box>
     </a-scene>
 </body>
 </html>
