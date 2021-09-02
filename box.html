@@ -11,9 +11,27 @@
     <a-scene>
         <a-assets>
             <img id="visa" src="resource/cube_visa.png">
+            <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
         </a-assets>
-        <a-box src="#visa" position="0 2 -3" rotation="0 0 0" height="2.5" width="4" depth="0.1" color="#efefef" scale="0.5 0.5 0.5" shadow></a-box>
-        <a-sky color="#ECECEC"></a-sky>
+
+        <a-box src="#visa"
+            position="0 2 -3"
+            rotation="0 0 0"
+            height="2.5" width="4" depth="0.02"
+            color="#efefef"
+            scale="0.5 0.5 0.5"
+            animation="property: rotation; to: 360 360 0; loop: true; dur: 2000; startEvents: click">
+        </a-box>
+
+        <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="0.9" position="2 4 4"></a-light>
+        <a-plane src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
+
+        <a-camera>
+            <a-cursor color="#FAFAFA"></a-cursor>
+          </a-camera>
     </a-scene>
 </body>
 </html>
