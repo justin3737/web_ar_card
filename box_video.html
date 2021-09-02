@@ -13,11 +13,11 @@
 </head>
 <body>
     <a-scene>
-        <a-entity camera="userHeight: 1.6" look-controls wasd-controls></a-entity>
-         <a-asset-item id="visa" src="resource/visa_card.gltf"></a-asset-item>
-            </a-assets>
-            <a-gltf-model position="1 -2 -5" rotation="10 10 0" src="#visa" scale="0.03 0.03 0.03"></a-gltf-model>
+        <a-entity camera="userHeight: 1" look-controls wasd-controls></a-entity>
+        <a-assets>
+            <img id="visa" src="resource/cube_visa.png">
         </a-assets>
+        <a-box src="#visa" position="1 -2 -3" rotation="0 0 0" height="2.5" width="4" depth="0.1" color="#efefef" scale="0.5 0.5 0.5" shadow></a-box>
     </a-scene>
 </body>
 </html>
