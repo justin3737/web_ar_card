@@ -23,19 +23,13 @@
 
       .drawer {
         width: 100%;
-        height: 50%;
         background-color: white;
         left: 0;
-        bottom: -45%;
         position: absolute;
         border-radius: 15px 15px 0px 0px;
         opacity: 0.9;
-        padding: 30px 40px;
         transition: bottom 1s ease-in;
         z-index: 99;
-      }
-
-      .drawer.is-open {
         bottom: 0;
       }
 
@@ -49,6 +43,10 @@
         cursor: pointer;
       }
 
+      .drawerBody {
+        padding: 30px 40px;
+      }
+
       h3.title {
         display: inline;
       }
@@ -56,7 +54,7 @@
       .icon-point {
         width: 18px;
         height: 18px;
-        background-image: url('/images/tree_point.png');
+        background-image: url('images/tree_point.png');
         background-repeat: no-repeat;
         background-size: cover;
         margin: 0 5px;
@@ -78,42 +76,42 @@
         display: block;
         margin: 0 auto;
         font-size: 16px;
+        margin-top: 20px;
       }
     </style>
   </head>
   <body>
-    <div id="myDrawer" class="drawer is-open">
-      <div class="slideBar" onclick="toogleNav();"></div>
-      <h3 class="title">新戶首刷禮</h3><i class="icon-point"></i><h3 class="title">500</h3>
-      <span class="desc">
-      2021/12/31前核卡</BR>
-      且核卡30日內完成下列兩項任務:</BR>
-      一般消費刷3筆且每筆NT$888以上</BR>
-      成功申辦電子帳單</BR>
-      </span>
-      </BR></BR>
-      <!--
-      <h3 class="title">早鳥限定禮</h3><i class="icon-point"></i><h3 class="title">300</h3>
-      <span class="desc">
-      2021/10/31前，</BR>
-      刷一般消費累積滿NT$20,000</BR>
-      ※舊戶同享 </BR>
-      -->
-      </BR>
-      </span>
-      <a class="action-button" onclick="toogleNav();">
-        我要辦卡
-      </a>
+
+    <div id="myDrawer" class="drawer">
+      <div class="slideBar"></div>
+      <div class="drawerBody">
+        <h3 class="title">新戶首刷禮</h3><i class="icon-point"></i><h3 class="title">500</h3>
+        <span class="desc">
+        2021/12/31前核卡</BR>
+        且核卡30日內完成下列兩項任務:</BR>
+        一般消費刷3筆且每筆NT$888以上</BR>
+        成功申辦電子帳單</BR>
+        </span>
+        </BR></BR>
+        <h3 class="title">早鳥限定禮</h3><i class="icon-point"></i><h3 class="title">300</h3>
+        <span class="desc">
+        2021/10/31前，</BR>
+        刷一般消費累積滿NT$20,000</BR>
+        ※舊戶同享 </BR>
+        </span>
+
+        <a class="action-button" onclick="toogleNav();">
+          我要辦卡
+        </a>
+      </div>
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-		function toogleNav() {
-			var myDawer = document.getElementById("myDrawer");
-			if (myDawer.classList.contains('is-open')){
-				myDawer.classList.remove('is-open');
-			} else{
-				myDawer.classList.add('is-open');
-			}
-		}
+    $(document).ready(function() {
+      $( ".slideBar" ).click(function() {
+        $('.drawerBody').slideToggle('slow');
+      });
+    });
 	</script>
   </html>
