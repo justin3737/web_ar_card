@@ -86,10 +86,9 @@
 			font-size: 16px;
 			margin-top: 20px;
 		}
-
-		/* .a-enter-vr {
+		.a-enter-vr {
 			visibility: hidden;
-		} */
+		}
 	</style>
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 	<script src="https://rawcdn.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
@@ -125,7 +124,7 @@
 			</a>
 		</div>
 	</div>
-    <a-scene embedded arjs="debugUIEnabled: false;"></a-scene>
+    <a-scene embedded arjs="debugUIEnabled: false;">
         <a-assets>
             <img id="visa" src="resource/cube_visa.png">
             <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
