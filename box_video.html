@@ -30,4 +30,16 @@
           </a-camera>
     </a-scene>
 </body>
+<script>
+	function toogleNav() {
+		var myDawer = document.getElementById("myDrawer");
+		if (myDawer.classList.contains('is-open')){
+			myDawer.classList.remove('is-open');
+		} else{
+			myDawer.classList.add('is-open');
+		}
+	}
+</script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://rawcdn.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
 </html>
