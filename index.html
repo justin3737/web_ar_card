@@ -128,19 +128,10 @@
 	</div>
     <a-scene embedded arjs="debugUIEnabled: false;">
         <a-assets>
-            <img id="visa" src="resource/cube_visa.png">
+            <img id="visa" src="resource/cube_visa_round.png">
             <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
             <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
         </a-assets>
-      	<!-- <a-rounded
-					position="0 1.5 -3"
-          rotation="-15 0 0"
-          height="2.5" width="4" depth="0.02"
-          color="#"
-          scale="0.3 0.3 0.3"
-					radius="0.1"
-					animation="property: rotation; from:360 0 0; to: -15 360 0; loop: false; dur: 2000; startEvents: click;">
-				</a-rounded> -->
        <a-box
 						material="transparent:true"
 						src="#visa"
@@ -154,7 +145,7 @@
         <a-light type="point" intensity="0.9" position="2 12 4"></a-light>
         <a-camera>
             <a-cursor color="#FAFAFA"></a-cursor>
-          </a-camera>
+        </a-camera>
     </a-scene>
 </body>
 </html>
