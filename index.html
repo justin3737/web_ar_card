@@ -92,9 +92,10 @@
 			visibility: hidden;
 		}
 	</style>
-	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-	<script src="https://rawcdn.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="js/aframe-1.2.0.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+	<script src="js/rounded-extend-box.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$( ".slideBar" ).click(function() {
@@ -131,8 +132,19 @@
             <img id="visa" src="resource/cube_visa.png">
             <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
             <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-        </a-assets>Ｉ
-        <a-box src="#visa"
+        </a-assets>
+      	<!-- <a-rounded
+					position="0 1.5 -3"
+          rotation="-15 0 0"
+          height="2.5" width="4" depth="0.02"
+          color="#"
+          scale="0.3 0.3 0.3"
+					radius="0.1"
+					animation="property: rotation; from:360 0 0; to: -15 360 0; loop: false; dur: 2000; startEvents: click;">
+				</a-rounded> -->
+        <a-box
+						box-round
+						src="#visa"
             position="0 1.5 -3"
             rotation="-15 0 0"
             height="2.5" width="4" depth="0.02"
