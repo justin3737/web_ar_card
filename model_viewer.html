@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>AR</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			background-color: #eee;
+			font-family: "Noto Sans", Helvetica,Arial,sans-serif;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+		.drawer {
+			width: 100%;
+			background-color: white;
+			left: 0;
+			position: absolute;
+			border-radius: 15px 15px 0px 0px;
+			opacity: 0.9;
+			transition: bottom 1s ease-in;
+			z-index: 99;
+			bottom: 0;
+		}
+
+		.slideBar {
+			position: relative;
+			width: 100%;
+			height: 20px;
+			cursor: pointer;
+		}
+
+		.slideBar::before {
+			position: absolute;
+			content: '';
+			width: 40px;
+			height: 3px;
+			background-color: white;
+			border-radius: 3px;
+			left: calc((100% - 40px)/2);
+			top: -10px;
+		}
+
+		.drawerBody {
+			padding: 10px 40px 30px;
+		}
+
+		h3.title {
+			display: inline;
+		}
+
+		.icon-point {
+			width: 18px;
+			height: 18px;
+			background-image: url('images/tree_point.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin: 0 5px;
+			display: inline-block;
+		}
+
+		.desc {
+			display: block;
+		}
+
+		.action-button {
+			background-color: #49B235;
+			padding: 18px 55px;
+			border-radius: 5px;
+			width: 180px;
+			height: 55px;
+			color: white;
+			text-decoration: none;
+			display: block;
+			margin: 0 auto;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		.a-enter-vr {
+			visibility: hidden;
+		}
+
+		model-viewer#visa {
+    	--poster-color: transparent;
+  	}
+	</style>
+	<script type="module" src="js/model-viewer-1.8.0.min.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$( ".slideBar" ).click(function() {
+				$('.drawerBody').slideToggle('slow');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="myDrawer" class="drawer">
+		<div class="slideBar"></div>
+		<div class="drawerBody">
+			<h3 class="title">新戶首刷禮</h3><i class="icon-point"></i><h3 class="title">500</h3>
+			<span class="desc">
+			2021/12/31前核卡<BR/>
+			且核卡30日內完成下列兩項任務:<BR/>
+			一般消費刷3筆且每筆NT$888以上<BR/>
+			成功申辦電子帳單<BR/>
+			</span><BR/>
+			<h3 class="title">早鳥限定禮</h3><i class="icon-point"></i><h3 class="title">300</h3>
+			<span class="desc">
+			2021/10/31前，<BR/>
+			刷一般消費累積滿NT$20,000<BR/>
+			※舊戶同享 <BR/>
+			</span>
+
+			<a class="action-button" onclick="toogleNav();">
+				我要辦卡
+			</a>
+		</div>
+	</div>
+
+		<model-viewer
+		id="visa"
+		src="resource/visa_card.gltf"
+		ar ar-modes="webxr scene-viewer quick-look"
+		touch-action
+		auto-rotate camera-controls data-js-focus-visible>
+	</model-viewer>
+
+</body>
+</html>
