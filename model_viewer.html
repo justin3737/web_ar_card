@@ -92,11 +92,13 @@
 			visibility: hidden;
 		}
 
-		model-viewer#visa {
-    	--poster-color: transparent;
-  	}
+		model-viewer {
+			width: 100vw;
+			height: 100vh;
+			--poster-color: transparent;
+		}
 	</style>
-	<script type="module" src="js/model-viewer-1.8.0.min.js"></script>
+	<script type="module" src="js/model-viewer.min.js"></script>
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function() {
@@ -130,14 +132,13 @@
 		</div>
 	</div>
 
-		<model-viewer
+	<model-viewer
 		id="visa"
 		src="resource/visa_card.gltf"
-		ar ar-modes="webxr scene-viewer quick-look"
-		touch-action
-		auto-rotate camera-controls data-js-focus-visible
-		xr-environment></model-viewer>
+		ar="" ar-modes="webxr scene-viewer quick-look"
+		camera-controls="" alt="A 3D model carousel"
+		data-js-focus-visible="" ar-status="not-presenting"
+		xr-environment>
 	</model-viewer>
-
 </body>
 </html>
