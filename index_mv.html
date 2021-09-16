@@ -91,12 +91,10 @@
 		.a-enter-vr {
 			visibility: hidden;
 		}
-
-		model-viewer#visa {
-    	--poster-color: transparent;
-  	}
 	</style>
-	<script type="module" src="js/model-viewer-1.8.0.min.js"></script>
+	<script src="js/aframe-1.2.0.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+  <script src="js/model-viewer.js"></script>
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function() {
@@ -129,15 +127,11 @@
 			</a>
 		</div>
 	</div>
-
-		<model-viewer
-		id="visa"
-		src="resource/visa_card.gltf"
-		ar ar-modes="webxr scene-viewer quick-look"
-		touch-action
-		auto-rotate camera-controls data-js-focus-visible
-		xr-environment></model-viewer>
-	</model-viewer>
-
+    <a-scene embedded arjs="debugUIEnabled: false;" model-viewer="gltfModel: #visa">
+			<a-asset-item id="visa" src="resource/visa_card.gltf"></a-asset-item>
+			</a-assets>
+					<a-gltf-model position="1 -2 -5" rotation="10 10 0" src="#visa" scale="0.03 0.03 0.03"></a-gltf-model>
+			</a-assets>
+    </a-scene>
 </body>
 </html>
