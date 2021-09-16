@@ -88,9 +88,6 @@
 			font-size: 16px;
 			margin-top: 20px;
 		}
-		.a-enter-vr {
-			visibility: hidden;
-		}
 
 		model-viewer {
 			width: 100vw;
@@ -102,12 +99,11 @@
 </head>
 <body>
 	<model-viewer
-		id="visa"
-		src="resource/visa_card.gltf"
-		ar="" ar-modes="webxr scene-viewer quick-look"
-		camera-controls="" alt="A 3D model carousel"
-		data-js-focus-visible="" ar-status="not-presenting"
-		xr-environment>
-	</model-viewer>
+	id="visa"
+	src="resource/visa_card.gltf"
+  ar="" ar-modes="webxr scene-viewer quick-look"
+  camera-controls alt="A 3D model of an astronaut"
+  magic-leap unstable-webxr
+  data-js-focus-visible="" ar-status="not-presenting" xr-environment>
 </body>
 </html>
